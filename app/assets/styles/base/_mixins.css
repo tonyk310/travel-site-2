@@ -1,0 +1,29 @@
+@define-mixin atSmall {
+	/*tell this mixin what to do*/
+	/*define a media query that selects screens that are 530px or larger*/
+	/*or the minimum width this will still be activated at*/
+	@media (min-width: 530px){
+		@mixin-content;
+	}
+}
+
+@define-mixin atMedium {
+	@media (min-width: 800px) {
+		@mixin-content;		
+	}
+}
+
+@define-mixin atLarge {
+	@media (min-width: 1200px) {
+		@mixin-content;		
+	}
+}
+
+@define-mixin clearfix {
+	&::after {
+		content: "";
+		clear: both;
+
+		display: table;
+	}
+}
