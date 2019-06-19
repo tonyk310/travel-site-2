@@ -13,6 +13,12 @@
 
 	@mixin atMedium {
 		background-color: rgba(47,85,114,0.3);
+
+		position: fixed;
+
+		&--dark {
+			background-color: rgba(23,51,72,0.85);
+		}
 	}
 
 	&__btn-container {
@@ -24,18 +30,27 @@
 	}
 
 	&__logo {
+		transition: transform 0.3s ease-out;
+
 		position: absolute;
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
 		background-color: $mainBlue;
 		padding: 25px 36px;
+		transform-origin: 50% 0;
 
 		@mixin atMedium {
 			left: auto;
 			transform: translateX(0);
+
+			/*this will target the logo only when the dark header is in use*/
+			.site-header--dark & {
+				transform: scale(0.55);
+			}
 		}
-	}
+	}	
+	
 
 	&__menu-icon {
 		width: 20px;
